@@ -1,0 +1,57 @@
+#ifndef UNTITLED8_PERSON_H
+#define UNTITLED8_PERSON_H
+
+#include <string>
+#include <vector>
+
+#include "Date.h"
+#include "Adress.h"
+#include "Phone.h"
+
+using namespace std;
+
+class Person {
+private:
+    string firstName;
+    string lastName;
+    Date birthday;
+    bool flag_firstname = true;
+    bool flag_lastname = true;
+    bool flag_birthday = true;
+public:
+    vector<Phone> phones;
+    Adress adress;
+
+    void SetFirstName (string firstName)
+    {
+        if (flag_firstname)
+        {this->firstName = firstName;
+        flag_firstname = false;}
+          }
+    void SetLastName (string lastName)
+    {
+        if (flag_lastname)
+        {this->lastName = lastName;
+            flag_lastname = false;}
+    }
+    void SetBirthday (Date birthday)
+    {
+        if (flag_birthday)
+        {this->birthday = birthday;
+            flag_birthday = false;}
+    }
+
+    Person(){};
+    Person(string firstName, string lastName, Date birthday, Adress adress, vector<Phone> phones)
+    {
+        SetFirstName(firstName);
+        SetLastName(lastName);
+        SetBirthday(birthday);
+        this->adress = adress;
+        this->phones = phones;
+    }
+
+    };
+
+
+#endif //UNTITLED8_PERSON_H

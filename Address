@@ -1,0 +1,15 @@
+
+#ifndef UNTITLED8_ADRESS_H
+#define UNTITLED8_ADRESS_H
+
+#include <string>
+using namespace std;
+
+struct Adress {
+
+    string country, region, city, street, house;
+    int post_code;
+};
+
+
+#endif //UNTITLED8_ADRESS_H
